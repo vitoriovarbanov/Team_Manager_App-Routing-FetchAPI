@@ -24,7 +24,7 @@ export function registerPost(){
 
 async function addUserToDatabase(userMail){
     const obj = {email: userMail}
-    await fetch(`https://team-manager-61be4-default-rtdb.firebaseio.com/teams/users.json`,{
+    await fetch(`https://team-manager-61be4-default-rtdb.firebaseio.com/users.json`,{
         method: "POST",
         headers: { "Content-type": "application/json;charset=UTF-8" },
         body: JSON.stringify(obj)
