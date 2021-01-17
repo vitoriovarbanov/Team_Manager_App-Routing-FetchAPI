@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/team.css">
+  <link rel="stylesheet" type="text/css" href="css/details.css">
+  <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="./node_modules/jquery/dist/jquery.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="./node_modules/handlebars/dist/handlebars.min.js"></script>
+  <script src="./node_modules/sammy/lib/sammy.js"></script>
+  <script src="./node_modules/sammy/lib/plugins/sammy.handlebars.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+
+  <title>Team Managers App</title>
+</head>
+
+<body>
+  <div id="infoBox" class="notification" disabled></div>
+  <div id="errorBox" class="notification"></div>
+  <!--<button><a href="/home" id="home">Home Page</a></button>
+    <button><a href="/about" id="catalog">About</a></button>
+    <button><a href="/login" id="about">Login</a></button>
+    <button><a href="/register" id="register">Register User</a></button>
+    <button id="create-team"><a href="#">Create Team</a></button>
+        <button id="edit-team"><a href="#">Edit Team</a></button>
+        <button id="details-team"><a href="#">Team Details</a></button>-->
+  <div id="main">
+  </div>
+  </div>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyBFvKJrTJzQkuAAju1mL3X633aVEk9XBu0",
+      authDomain: "team-manager-61be4.firebaseapp.com",
+      projectId: "team-manager-61be4",
+      storageBucket: "team-manager-61be4.appspot.com",
+      messagingSenderId: "1038192573629",
+      appId: "1:1038192573629:web:f5aaec5c6e39ffba9ecbd4"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script type="module" src="./scripts/app2.js"></script>
+</body>
+
+</html>
