@@ -32,5 +32,9 @@ async function assignUserID(infoUser){
             const emailArr = Object.entries(data)
             const neededUser = emailArr.find(x=>x[1].email===infoUser.email)
             infoUser.userID = neededUser[0]
+            if(neededUser[1].hasOwnProperty('teamID')){
+                infoUser.teamID = neededUser[1].teamID;
+                infoUser.hasTeam = true;
+            }
         })
 }
