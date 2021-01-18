@@ -13,7 +13,13 @@ export default async function () {
                 Object.assign(dataObj,data)
             })
     dataObj.members = []
-    console.log(this.app.userData)
     Object.assign(dataObj,this.app.userData)
+    if(this.params.id!==this.app.userData.teamID){
+        dataObj.isAuthor = false;
+        dataObj.isOnTeam = false;
+    }else{
+        dataObj.isAuthor = true;
+        dataObj.isOnTeam = true;
+    }
     this.partial('./templates/catalog/details.hbs', dataObj)
 }

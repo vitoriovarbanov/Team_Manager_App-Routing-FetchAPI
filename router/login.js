@@ -17,10 +17,20 @@ export async function loginPost(){
             this.app.userData.loggedIn = true;
             sessionStorage.setItem('id', uid)
             sessionStorage.setItem('email', email)
-            console.log(this.params)
+            assignUserID(this.app.userData)
             this.redirect('#/home')
         })
         .catch((error) => {
             console.log(error)
         }));
+}
+
+async function assignUserID(infoUser){
+    await fetch(`https://team-manager-61be4-default-rtdb.firebaseio.com/users.json`)
+        .then(res=>res.json())
+        .then(data=>{
+            const emailArr = Object.entries(data)
+            const neededUser = emailArr.find(x=>x[1].email===infoUser.email)
+            infoUser.userID = neededUser[0]
+        })
 }

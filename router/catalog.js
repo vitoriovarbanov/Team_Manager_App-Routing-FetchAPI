@@ -14,6 +14,6 @@ export default async function () {
         .then(res=>res.json())
         .then(data=>this.app.userData.teams = data)
     }
-    
+    console.log(this.app.userData)
     this.partial('./templates/catalog/teamCatalog.hbs', this.app.userData)
 }

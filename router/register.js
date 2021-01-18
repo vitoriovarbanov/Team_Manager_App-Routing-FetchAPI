@@ -13,7 +13,7 @@ export function registerPost(){
     const { email, password, repeatPassword } = this.params
     auth.createUserWithEmailAndPassword(email, password)
         .then((user) => {
-            //addUserToDatabase(email,this.app.userData)
+            addUserToDatabase(email,this.app.userData)
             this.redirect('#/login')
         })
         .catch((error) => {
@@ -22,7 +22,7 @@ export function registerPost(){
     
 }
 
-/*async function addUserToDatabase(userMail,infoUser){
+async function addUserToDatabase(userMail,infoUser){
     const obj = {email: userMail}
     await fetch(`https://team-manager-61be4-default-rtdb.firebaseio.com/users.json`,{
         method: "POST",
@@ -31,4 +31,4 @@ export function registerPost(){
     }).then(res=>res.json())
         .then(data=>infoUser.userID = data.name)
         
-}*/
+}
