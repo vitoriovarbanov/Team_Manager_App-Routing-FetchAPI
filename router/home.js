@@ -3,6 +3,6 @@ export default async function(){
         header: await this.load('./templates/common/header.hbs'),
         footer: await this.load('./templates/common/footer.hbs'),
     }   
-    console.log(this.app.userData)
+    console.log(this.params)
     this.partial('./templates/home/home.hbs',this.app.userData)
 }
