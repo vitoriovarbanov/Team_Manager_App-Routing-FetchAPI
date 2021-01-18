@@ -37,8 +37,8 @@ export function createNewTeamReq() {
             })
                 .then(res => res.json())
                 .then(data => {
-                    someFnc(data)
-                    //this.app.userData.teamId = data.name
+                    addIdToTeamProperties(data)
+                    //addTeamIdToUserCollection(data,this.app.userData.userID)
                     this.app.userData.isAuthor = true;
                     this.app.userData.isOnTeam = true;
                     this.app.userData.hasTeam = true;
@@ -50,7 +50,7 @@ export function createNewTeamReq() {
     }
 }
 
-async function someFnc(data){
+async function addIdToTeamProperties(data){
     const obj = {
         _id: data.name
     }
@@ -60,3 +60,18 @@ async function someFnc(data){
         body: JSON.stringify(obj)
     }).then(res=>res.json()).then(data=>console.log(data))
 }
+// arguments - teamID === data.name
+/*async function addTeamIdToUserCollection(data,userId){
+    const obj = {
+        teamID: data.name 
+    }
+    await fetch(`https://team-manager-61be4-default-rtdb.firebaseio.com/teams/users/${userId}.json`,{
+        method: "PATCH",
+        headers: { "Content-type": "application/json;charset=UTF-8" },
+        body: JSON.stringify(obj)
+    })
+        .then(res=>res.json())
+            .then(data=>{
+                console.log(data)
+            })
+}*/

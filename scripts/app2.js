@@ -15,6 +15,7 @@ window.addEventListener('load', function () {
         this.userData = {
             loggedIn: false,
             hasNoTeam: false,
+            userID: 0
            // teams: []
         }
 

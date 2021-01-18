@@ -17,10 +17,10 @@ export async function loginPost(){
             this.app.userData.loggedIn = true;
             sessionStorage.setItem('id', uid)
             sessionStorage.setItem('email', email)
+            console.log(this.params)
             this.redirect('#/home')
         })
         .catch((error) => {
             console.log(error)
         }));
 }
-
