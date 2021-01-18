@@ -4,7 +4,7 @@ export default async function(){
         footer: await this.load('./templates/common/footer.hbs'),
         loginForm:  await this.load('./templates/login/loginForm.hbs')
     }
-
+    console.log(this.app.userData)
     this.partial('./templates/login/loginPage.hbs')
 }
 
@@ -34,7 +34,6 @@ async function assignUserID(infoUser){
             infoUser.userID = neededUser[0]
             if(neededUser[1].hasOwnProperty('teamID')){
                 infoUser.teamID = neededUser[1].teamID;
-                infoUser.hasTeam = true;
             }
         })
 }

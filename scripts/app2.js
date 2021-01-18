@@ -7,6 +7,7 @@ import details from '../router/details.js'
 import create, { createNewTeamReq} from '../router/create.js'
 import edit from '../router/edit.js'
 import logout from '../router/logout.js'
+import leave from '../router/leave.js'
 
 
 window.addEventListener('load', function () {
@@ -39,6 +40,8 @@ window.addEventListener('load', function () {
         this.get('#/edit/:teamId', edit)
 
         this.get('#/logout', logout)
+
+        this.get('#/leave', leave)
 
         this.post('#/register', (context) => {registerPost.call(context)})
         this.post('#/login', (context) => {loginPost.call(context)})

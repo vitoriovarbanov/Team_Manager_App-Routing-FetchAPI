@@ -14,8 +14,6 @@ export default async function () {
         .then(res=>res.json())
         .then(data=>this.app.userData.teams = data)
     }
-    if(this.app.userData.hasOwnProperty('teamID')){
-        this.app.userData.hasTeam = true;
-    }
+    console.log(this.app.userData)
     this.partial('./templates/catalog/teamCatalog.hbs', this.app.userData)
 }
